@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinur Islam - n8n SPECIALIST</title>
+    <title>Sara Howari - UI/UX Designer</title>
     <style>
         body {
             margin: 0;
@@ -110,7 +110,7 @@
         .avatar-frame {
             width: 250px;
             height: 250px;
-            background: url('your-image.jpg') no-repeat center;
+            background: url('your-photo.jpg') no-repeat center;
             background-size: cover;
             border-radius: 50%;
             margin: 20px auto;
@@ -118,7 +118,7 @@
             position: relative;
             z-index: 1;
             box-shadow: 0 0 20px rgba(161, 0, 161, 0.5);
-            opacity: 0;
+            overflow: visible; /* Allow overflow for head */
             animation: zoomIn 1s ease-out 1.3s forwards;
         }
         .avatar-frame::before {
@@ -131,6 +131,19 @@
             background: radial-gradient(circle, #a100a1 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
+        }
+        .avatar-frame::after {
+            content: '';
+            position: absolute;
+            top: -50px; /* Adjust this value to control how much head extends out */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 50px;
+            background: inherit; /* Inherit the image from parent */
+            border-radius: 50% 50% 0 0; /* Curve the top edge */
+            z-index: 2;
+            overflow: hidden;
         }
         .buttons a {
             display: inline-block;
@@ -353,9 +366,9 @@
 
     <div class="header">
         <h1>WELCOME TO MY WORLD ✦</h1>
-        <h2>Hi, I'm Dinur Islam</h2>
-        <h3>n8n automation specialist</h3>
-        <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.</p>
+        <h2>Hi, I'm Sara Howari</h2>
+        <h3>UI&UX DESIGNER</h3>
+        <p>Passionate UI/UX designer, I create intuitive and visually appealing digital experiences, I transform ideas into seamless designs that meet users' expectations.</p>
         <div class="avatar-frame"></div>
         <div class="buttons">
             <a href="#projects">My Projects</a>
@@ -364,7 +377,7 @@
 
     <div class="section" id="projects">
         <h2>My Projects</h2>
-        <p>Discover the projects that reflect my passion for smart automation and creative problem-solving</p>
+        <p>Discover the projects that showcase my passion for design and innovation</p>
         <div class="projects">
             <div class="project-card">
                 <img src="https://via.placeholder.com/200" alt="Amaskara App">
@@ -417,11 +430,9 @@
     <div class="section" id="about">
         <h2>About me</h2>
         <div class="about-content">
-            <p>Hi! I'm Dinur Islam, an automation enthusiast and N8n specialist.
-I build smart and efficient no-code workflows using N8n to automate repetitive tasks, connect apps, and simplify complex processes. My goal is to help individuals and businesses save time, reduce errors, and improve productivity through powerful automation solutions.</p>
-            <p>I create smart automations using N8n to save time and reduce manual work.
-My skills include designing simple workflows, connecting different apps, and automating tasks like collecting data, posting on social media, and sending notifications. I make sure everything runs smoothly and helps people work faster and easier.</p>
-            <p>★I am deeply committed to my work, putting creativity and accuracy into every automation to ensure smooth, effective, and time-saving solutions.</p>
+            <p>Hi! I'm Sara Howari, a passionate UI/UX designer dedicated to creating seamless and visually engaging digital experiences. With 2 years of experience, I specialize in designing intuitive interfaces that enhance usability and user satisfaction.</p>
+            <p>My skills include wireframing, prototyping, and user research, ensuring that each design is both aesthetically pleasing and functionally efficient. I have worked on diverse projects, including mobile apps, web platforms, and interactive dashboards, always focusing on user-centered solutions that drive engagement.</p>
+            <p>★ I am deeply committed to my work, investing creativity and precision into every project to ensure a unique and effective user experience.</p>
         </div>
         <div class="skills">
             <h3>Skills</h3>
