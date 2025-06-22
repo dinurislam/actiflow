@@ -14,28 +14,17 @@
         }
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            padding: 20px 40px;
-            background: linear-gradient(to right, #2a002a, #3a003a);
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .navbar .logo {
-            width: 30px;
-            height: 30px;
-            background: #a100a1;
-            border-radius: 50%;
-        }
-        .navbar .nav-links {
-            display: flex;
-            gap: 20px;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 16px;
         }
         .navbar .contact-btn {
@@ -88,8 +77,6 @@
         .header p {
             font-size: 18px;
             color: #ccc;
-            max-width: 600px;
-            margin: 20px auto;
             position: relative;
             z-index: 1;
         }
@@ -103,7 +90,6 @@
             border: 5px solid #a100a1;
             position: relative;
             z-index: 1;
-            box-shadow: 0 0 20px rgba(161, 0, 161, 0.5);
         }
         .avatar-frame::before {
             content: '';
@@ -112,7 +98,7 @@
             left: -20px;
             width: 290px;
             height: 290px;
-            background: radial-gradient(circle, #a100a1 0%, transparent 70%);
+            background: radial-gradient(circle, #ff0000 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
         }
@@ -196,21 +182,18 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo"></div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#works">Our Works</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact" class="contact-btn">Contact Us</a>
-        </div>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#works">Our Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="contact-btn">Contact Us</a>
     </div>
 
     <div class="header">
         <h1>WELCOME TO MY WORLD ✦</h1>
         <h2>Hi, I'm Sara Howari</h2>
-        <h3>UI&UX DESIGNER</h3>
-        <p>Passionate UI/UX designer, I create intuitive and visually appealing digital experiences, I transform ideas into seamless designs that meet users' expectations.</p>
+        <h3>UI/UX DESIGNER</h3>
+        <p>Passionate UI/UX designer, I create intuitive and visually appealing digital experiences that transform ideas into seamless designs that meet users expectations.</p>
         <div class="avatar-frame"></div>
         <div class="buttons">
             <a href="#projects">My Projects</a>
