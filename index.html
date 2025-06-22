@@ -110,7 +110,7 @@
         .avatar-frame {
             width: 250px;
             height: 250px;
-            background: url('your-photo.jpg') no-repeat center;
+            background: url('your-image.jpg') no-repeat center;
             background-size: cover;
             border-radius: 50%;
             margin: 20px auto;
@@ -118,7 +118,7 @@
             position: relative;
             z-index: 1;
             box-shadow: 0 0 20px rgba(161, 0, 161, 0.5);
-            overflow: visible; /* Allow overflow for head */
+            opacity: 0;
             animation: zoomIn 1s ease-out 1.3s forwards;
         }
         .avatar-frame::before {
@@ -131,19 +131,6 @@
             background: radial-gradient(circle, #a100a1 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
-        }
-        .avatar-frame::after {
-            content: '';
-            position: absolute;
-            top: -50px; /* Adjust this value to control how much head extends out */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 50px;
-            background: inherit; /* Inherit the image from parent */
-            border-radius: 50% 50% 0 0; /* Curve the top edge */
-            z-index: 2;
-            overflow: hidden;
         }
         .buttons a {
             display: inline-block;
