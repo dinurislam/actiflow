@@ -38,13 +38,7 @@
             color: #fff;
             text-decoration: none;
             font-size: 16px;
-        }
-        .navbar .contact-btn {
-            background: #a100a1;
-            padding: 10px 20px;
-            border-radius: 20px;
-            text-decoration: none;
-            color: #fff;
+            cursor: pointer;
         }
         .header {
             text-align: center;
@@ -159,7 +153,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Specific Animations for Sections */
         .section#about {
             opacity: 0;
             transform: translateY(50px);
@@ -305,22 +298,17 @@
                 height: 150px;
             }
         }
-
-        /* Debug Styling (Remove after testing) */
-        .section:not(.in-view) {
-            border: 2px dashed red; /* Highlight hidden sections for debugging */
-        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <div class="logo"></div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#works">Our Works</a>
-            <a href="#reviews">Reviews</a>
-            <a href="#contact" class="contact-btn">Contact Us</a>
+            <a href="#" onclick="location.reload(); return false;">Home</a>
+            <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
+            <a href="#services" onclick="scrollToSection('services'); return false;">Services</a>
+            <a href="#projects" onclick="scrollToSection('projects'); return false;">My Projects</a>
+            <a href="#contact" onclick="scrollToSection('contact'); return false;">Contact</a>
         </div>
     </div>
 
@@ -332,7 +320,7 @@
         <div class="avatar-frame"></div>
         <div class="buttons">
             <a href="#projects">My Projects</a>
-            <a href="#cv">Download CV</a>
+            <!-- Removed Download CV button -->
         </div>
         <div class="social-icons">
             <img src="https://via.placeholder.com/30" alt="LinkedIn">
@@ -407,6 +395,11 @@
         </div>
     </div>
 
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>This is a placeholder for the contact section.</p>
+    </div>
+
     <div class="footer">
         <a href="#portfolio">Portfolio</a>
         <a href="#follow">Follow Sara</a>
@@ -419,15 +412,19 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
-                        observer.unobserve(entry.target); // Stop observing after animation
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 }); // Lower threshold to trigger earlier
+            }, { threshold: 0.1 });
 
             document.querySelectorAll('.section, .services, .projects, .service-card, .project-card, .about-content, .skills').forEach(element => {
                 observer.observe(element);
             });
         });
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
