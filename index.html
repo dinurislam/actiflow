@@ -1,120 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Actiflow | n8n Automation Specialist</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: white;
-      color: #222;
-    }
-    header {
-      background-color: #f4f4f4;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 36px;
-      margin: 0;
-    }
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
-    .buttons a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 28px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    ul {
-      list-style-type: "✅ ";
-      padding-left: 20px;
-    }
-    .project {
-      margin-bottom: 20px;
-    }
-    footer {
-      background: #f4f4f4;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Howari - UI/UX Designer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #1a001a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .navbar .contact-btn {
+            background: #a100a1;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(to bottom, #2a002a, #1a001a);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 40px;
+            color: #d100d1;
+        }
+        .header p {
+            font-size: 18px;
+            color: #ccc;
+        }
+        .avatar {
+            width: 200px;
+            height: 200px;
+            background: url('your-image.jpg') no-repeat center;
+            background-size: cover;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 5px solid #a100a1;
+        }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #a100a1;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+        .social-icons {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #d100d1;
+            font-size: 30px;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .skills img {
+            width: 40px;
+            margin: 0 10px;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            background: #2a002a;
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+        }
+        .service-card img {
+            width: 50px;
+        }
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .project-card {
+            background: #2a002a;
+            padding: 20px;
+            width: 200px;
+            border-radius: 10px;
+            text-align: left;
+        }
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a001a;
+        }
+        .footer a {
+            color: #a100a1;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1> Automation Specialist</h1>
-    <p>I help businesses save time and boost efficiency by building powerful no-code automations with n8n.</p>
-    <div class="buttons">
-      <a href="#portfolio">View My Work</a>
-      <a href="#contact">Contact Me</a>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#works">Our Works</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact" class="contact-btn">Contact Us</a>
     </div>
-  </header>
 
-  <section>
-    <h2>What I</h2>
-    <ul>
-      <li>n8n Workflow Automation</li>
-      <li>Web Scraping + Data Integration</li>
-      <li>Lead Routing & Email Sequences</li>
-      <li>API Integration (Google Sheets, Notion, Gmail, etc.)</li>
-      <li>Workflow Debugging & Optimization</li>
-    </ul>
-  </section>
-
-  <section id="portfolio">
-    <h2>Recent Projects</h2>
-    <div class="project">
-      <strong>Client:</strong> E-commerce Startup<br>
-      <strong>Task:</strong> Automated product price comparison from 3 suppliers<br>
-      <strong>Tools:</strong> n8n + HTTP Request + Google Sheets<br>
-      <strong>Result:</strong> Saved 15 hours/week in manual checks
+    <div class="header">
+        <h1>WELCOME TO MY WORLD ✦</h1>
+        <h2>Hi, I'm Sara Howari</h2>
+        <h3>UI/UX DESIGNER</h3>
+        <p>Passionate UI/UX designer, I create intuitive and visually appealing digital experiences that transform ideas into seamless designs that meet users expectations.</p>
+        <div class="avatar"></div>
+        <div class="buttons">
+            <a href="#projects">My Projects</a>
+            <a href="#cv">Download CV</a>
+        </div>
+        <div class="social-icons">
+            <img src="https://via.placeholder.com/30" alt="LinkedIn">
+            <img src="https://via.placeholder.com/30" alt="Twitter">
+            <img src="https://via.placeholder.com/30" alt="Facebook">
+        </div>
     </div>
-    <div class="project">
-      <strong>Client:</strong> Dental Clinic<br>
-      <strong>Task:</strong> Built scraper → verified leads → automated email send<br>
-      <strong>Tools:</strong> n8n + Hunter + Notion
+
+    <div class="section" id="about">
+        <h2>About me</h2>
+        <div class="about-content">
+            <p>Hi! I'm Sara Howari, a passionate UI/UX designer dedicated to creating seamless and visually engaging digital experiences. With 2 years of experience, I specialize in designing intuitive interfaces that enhance usability and user satisfaction.</p>
+            <p>My skills include wireframing, prototyping, and user research, ensuring that each design is both aesthetically pleasing and functionally efficient. I have worked on diverse projects, including mobile apps, web platforms, and interactive dashboards, always focusing on user-centered solutions that drive engagement.</p>
+            <p>★ I am deeply committed to my work, investing creativity and precision into every project to ensure a unique and effective user experience.</p>
+        </div>
+        <div class="skills">
+            <h3>Skills</h3>
+            <img src="https://via.placeholder.com/40" alt="Xd">
+            <img src="https://via.placeholder.com/40" alt="Ai">
+            <img src="https://via.placeholder.com/40" alt="Ps">
+            <img src="https://via.placeholder.com/40" alt="Figma">
+            <img src="https://via.placeholder.com/40" alt="Sketch">
+        </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>📧 dinur@gmail.com</p>
-    <p>🔗 <a href="https://linkedin.com/in/dinur" target="_blank">LinkedIn</a> | <a href="#">Upwork Profile</a></p>
-  </section>
+    <div class="section" id="services">
+        <h2>Services</h2>
+        <p>Transforming ideas into intuitive digital experiences</p>
+        <div class="services">
+            <div class="service-card">
+                <img src="https://via.placeholder.com/50" alt="UI/UX">
+                <h4>UI/UX</h4>
+                <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/50" alt="Web Design">
+                <h4>Web Design</h4>
+                <p>Designing responsive and engaging websites tailored to user needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/50" alt="App Design">
+                <h4>App Design</h4>
+                <p>Crafting seamless and user-friendly mobile app interfaces.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://via.placeholder.com/50" alt="Prototyping">
+                <h4>Prototyping & Wireframing</h4>
+                <p>Building interactive prototypes and structured wireframes for better design flow.</p>
+            </div>
+        </div>
+    </div>
 
-  <footer>
-    &copy; 2025 Actiflow - All Rights Reserved
-  </footer>
+    <div class="section" id="projects">
+        <h2>My Projects</h2>
+        <p>Discover the projects that showcase my passion for design and innovation</p>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/200" alt="Amaskara App">
+                <h4>Amaskara App</h4>
+                <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/200" alt="Homy App">
+                <h4>Homy App</h4>
+                <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/200" alt="B-Roll Media">
+                <h4>B-Roll Media</h4>
+                <p>Designing intuitive and engaging websites with a creative approach.</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="footer">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#follow">Follow Sara</a>
+        <a href="#appreciate">I Appreciate</a>
+    </div>
 </body>
 </html>
