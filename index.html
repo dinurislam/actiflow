@@ -159,10 +159,20 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .section#about .about-content {
+        /* Specific Animations for Sections */
+        .section#about {
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section#about.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section#about .about-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s;
         }
         .section#about.in-view .about-content {
             opacity: 1;
@@ -171,16 +181,25 @@
         .section#about .skills {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s ease-out 0.4s, transform 0.5s ease-out 0.4s;
         }
         .section#about.in-view .skills {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section#services {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section#services.in-view {
             opacity: 1;
             transform: translateY(0);
         }
         .section#services .services {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s;
         }
         .section#services.in-view .services {
             opacity: 1;
@@ -270,7 +289,7 @@
                 margin: 0 10px;
             }
             .services, .projects {
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+                -webkit-overflow-scrolling: touch;
             }
             .navbar {
                 padding: 10px 20px;
@@ -287,23 +306,10 @@
             }
         }
 
-        /* JavaScript for Scroll Animation */
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('in-view');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                document.querySelectorAll('.section, .services, .projects, .service-card, .project-card, .about-content, .skills').forEach(element => {
-                    observer.observe(element);
-                });
-            });
-        </script>
+        /* Debug Styling (Remove after testing) */
+        .section:not(.in-view) {
+            border: 2px dashed red; /* Highlight hidden sections for debugging */
+        }
     </style>
 </head>
 <body>
@@ -406,5 +412,22 @@
         <a href="#follow">Follow Sara</a>
         <a href="#appreciate">I Appreciate</a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target); // Stop observing after animation
+                    }
+                });
+            }, { threshold: 0.1 }); // Lower threshold to trigger earlier
+
+            document.querySelectorAll('.section, .services, .projects, .service-card, .project-card, .about-content, .skills').forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
