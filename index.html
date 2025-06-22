@@ -22,6 +22,7 @@
             border-top-right-radius: 20px;
             position: relative;
             z-index: 10;
+            animation: fadeIn 1s ease-in;
         }
         .navbar .logo {
             width: 30px;
@@ -70,6 +71,8 @@
             color: #d100d1;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            animation: slideDown 1s ease-out 0.5s forwards;
         }
         .header h2 {
             margin: 10px 0;
@@ -77,6 +80,8 @@
             color: #fff;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            animation: slideDown 1s ease-out 0.7s forwards;
         }
         .header h3 {
             margin: 5px 0;
@@ -84,6 +89,8 @@
             color: #d100d1;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            animation: slideDown 1s ease-out 0.9s forwards;
         }
         .header p {
             font-size: 18px;
@@ -92,6 +99,8 @@
             margin: 20px auto;
             position: relative;
             z-index: 1;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.1s forwards;
         }
         .avatar-frame {
             width: 250px;
@@ -104,6 +113,8 @@
             position: relative;
             z-index: 1;
             box-shadow: 0 0 20px rgba(161, 0, 161, 0.5);
+            opacity: 0;
+            animation: zoomIn 1s ease-out 1.3s forwards;
         }
         .avatar-frame::before {
             content: '';
@@ -124,10 +135,14 @@
             color: #fff;
             text-decoration: none;
             border-radius: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
         }
         .social-icons {
             text-align: center;
             margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.7s forwards;
         }
         .social-icons img {
             width: 30px;
@@ -136,6 +151,40 @@
         .section {
             padding: 50px 20px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section#about .about-content {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section#about.in-view .about-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section#about .skills {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section#about.in-view .skills {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section#services .services {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .section#services.in-view .services {
+            opacity: 1;
+            transform: translateY(0);
         }
         .section h2 {
             color: #d100d1;
@@ -150,33 +199,33 @@
             width: 40px;
             margin: 0 10px;
         }
-        .services {
+        .services, .projects {
             display: flex;
-            justify-content: center;
             gap: 20px;
-            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .service-card {
+        .services.in-view, .projects.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card, .project-card {
             background: #2a002a;
             padding: 20px;
             width: 200px;
             border-radius: 10px;
+            flex-shrink: 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .service-card img {
+        .service-card.in-view, .project-card.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .service-card img, .project-card img {
             width: 50px;
-        }
-        .projects {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .project-card {
-            background: #2a002a;
-            padding: 20px;
-            width: 200px;
-            border-radius: 10px;
-            text-align: left;
         }
         .project-card img {
             width: 100%;
@@ -186,12 +235,15 @@
             text-align: center;
             padding: 20px;
             background: #1a001a;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
         }
         .footer a {
             color: #a100a1;
             margin: 0 10px;
             text-decoration: none;
         }
+
         /* Animation Keyframes */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -206,6 +258,35 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .services, .projects {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 10px 0;
+            }
+            .service-card, .project-card {
+                width: 180px;
+                margin: 0 10px;
+            }
+            .services, .projects {
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            }
+            .navbar {
+                padding: 10px 20px;
+            }
+            .navbar .nav-links {
+                gap: 10px;
+            }
+            .header {
+                padding: 30px 0;
+            }
+            .avatar-frame {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
         /* JavaScript for Scroll Animation */
         <script>
             document.addEventListener('DOMContentLoaded', () => {
@@ -218,7 +299,7 @@
                     });
                 }, { threshold: 0.1 });
 
-                document.querySelectorAll('.section, .services, .projects, .service-card, .project-card').forEach(element => {
+                document.querySelectorAll('.section, .services, .projects, .service-card, .project-card, .about-content, .skills').forEach(element => {
                     observer.observe(element);
                 });
             });
