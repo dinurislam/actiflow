@@ -18,6 +18,8 @@
             align-items: center;
             padding: 20px 0;
             background: rgba(0, 0, 0, 0.5);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
         .navbar a {
             color: #fff;
@@ -36,24 +38,69 @@
             text-align: center;
             padding: 50px 0;
             background: linear-gradient(to bottom, #2a002a, #1a001a);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, #a100a1 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
         }
         .header h1 {
             margin: 0;
             font-size: 40px;
             color: #d100d1;
+            position: relative;
+            z-index: 1;
+        }
+        .header h2 {
+            margin: 10px 0;
+            font-size: 30px;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .header h3 {
+            margin: 5px 0;
+            font-size: 25px;
+            color: #d100d1;
+            position: relative;
+            z-index: 1;
         }
         .header p {
             font-size: 18px;
             color: #ccc;
+            position: relative;
+            z-index: 1;
         }
-        .avatar {
-            width: 200px;
-            height: 200px;
+        .avatar-frame {
+            width: 250px;
+            height: 250px;
             background: url('your-image.jpg') no-repeat center;
             background-size: cover;
             border-radius: 50%;
             margin: 20px auto;
             border: 5px solid #a100a1;
+            position: relative;
+            z-index: 1;
+        }
+        .avatar-frame::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 290px;
+            height: 290px;
+            background: radial-gradient(circle, #ff0000 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
         }
         .buttons a {
             display: inline-block;
@@ -147,7 +194,7 @@
         <h2>Hi, I'm Sara Howari</h2>
         <h3>UI/UX DESIGNER</h3>
         <p>Passionate UI/UX designer, I create intuitive and visually appealing digital experiences that transform ideas into seamless designs that meet users expectations.</p>
-        <div class="avatar"></div>
+        <div class="avatar-frame"></div>
         <div class="buttons">
             <a href="#projects">My Projects</a>
             <a href="#cv">Download CV</a>
