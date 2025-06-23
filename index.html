@@ -27,7 +27,7 @@
     .navbar .logo {
       width: 30px;
       height: 30px;
-      background: #a100a1;
+      background: #1a000b;
       border-radius: 50%;
     }
     .navbar .nav-links {
@@ -42,7 +42,7 @@
     }
     .navbar .contact-btn {
       background: #a100a1;
-      padding: 10px 30px;
+      padding: 10px 20px;
       border-radius: 25px;
       text-decoration: none;
       color: #fff;
@@ -57,6 +57,19 @@
       background: linear-gradient(to bottom, #2a002a, #1a001a);
       position: relative;
       overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 100px; /* Adjusted to appear below "WELCOME TO MY WORLD" */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px; /* Larger circle for a beautiful effect */
+      height: 400px;
+      background: radial-gradient(circle, rgba(161, 0, 161, 0.5) 0%, transparent 70%); /* Purple with soft fade */
+      border-radius: 50%;
+      box-shadow: 0 0 50px rgba(161, 0, 161, 0.3); /* Subtle purple glow */
+      z-index: 0;
     }
     .header h1 {
       margin: 0;
@@ -251,6 +264,11 @@
       .contact-links {
         flex-direction: column;
         align-items: center;
+      }
+      .header::before {
+        width: 250px; /* Smaller circle for mobile */
+        height: 250px;
+        top: 80px; /* Adjusted for mobile */
       }
     }
   </style>
