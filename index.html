@@ -27,8 +27,8 @@
         .navbar .logo {
             width: 30px;
             height: 30px;
+            background: #a100a1;
             border-radius: 50%;
-            object-fit: cover;
         }
         .navbar .nav-links {
             display: flex;
@@ -132,6 +132,17 @@
             border-radius: 50%;
             z-index: -1;
         }
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: #a100a1;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 20px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+        }
         .section {
             padding: 50px 20px;
             text-align: center;
@@ -197,7 +208,7 @@
             margin: 0 auto;
             line-height: 1.6;
         }
-        .skillsAJ img {
+        .skills img {
             width: 40px;
             margin: 0 10px;
         }
@@ -330,7 +341,7 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="https://via.placeholder.com/30" alt="Dinur Islam Profile Picture" class="logo">
+        <div class="logo"></div>
         <div class="nav-links">
             <a href="#" onclick="location.reload(); return false;">Home</a>
             <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
@@ -344,8 +355,13 @@
         <h1>WELCOME TO MY WORLD ✦</h1>
         <h2>Hi, I'm Dinur Islam</h2>
         <h3>n8n automation specialist</h3>
-        <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.</p>
+        <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.
+
+</p>
         <div class="avatar-frame"></div>
+        <div class="buttons">
+            <a href="#projects">My Projects</a>
+        </div>
     </div>
 
     <div class="section" id="projects">
