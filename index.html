@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinur Islam - n8n SPECIALIST</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -27,8 +30,8 @@
         .navbar .logo {
             width: 30px;
             height: 30px;
-            background: #a100a1;
             border-radius: 50%;
+            object-fit: cover;
         }
         .navbar .nav-links {
             display: flex;
@@ -117,7 +120,6 @@
             border: 5px solid #a100a1;
             position: relative;
             z-index: 1;
-            box-shadow: 0 0 20px rgba(161, 0, 161, 0.5);
             opacity: 0;
             animation: zoomIn 1s ease-out 1.3s forwards;
         }
@@ -131,17 +133,6 @@
             background: radial-gradient(circle, #a100a1 0%, transparent 70%);
             border-radius: 50%;
             z-index: -1;
-        }
-        .buttons a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background: #a100a1;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 20px;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1.5s forwards;
         }
         .section {
             padding: 50px 20px;
@@ -337,16 +328,49 @@
                 align-items: center;
             }
         }
+
+        @media (max-width: 480px) {
+            .navbar .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar .contact-btn {
+                margin-top: 10px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .header h2 {
+                font-size: 24px;
+            }
+            .header h3 {
+                font-size: 20px;
+            }
+            .header p {
+                font-size: 16px;
+            }
+            .avatar-frame {
+                width: 100px;
+                height: 100px;
+            }
+            .projects, .services {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-card, .service-card {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo"></div>
+        <img src="https://i.imgur.com/7XvK1aL.jpg" alt="Dinur Islam Profile Picture" class="logo">
         <div class="nav-links">
             <a href="#" onclick="location.reload(); return false;">Home</a>
             <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
             <a href="#services" onclick="scrollToSection('services'); return false;">Services</a>
-            <a href="#projects" onclick="scrollToSection('projects'); return false;">My Projects</a>
             <a href="#contact" class="contact-btn" onclick="scrollToSection('contact'); return false;">Contact</a>
         </div>
     </div>
@@ -355,13 +379,8 @@
         <h1>WELCOME TO MY WORLD ✦</h1>
         <h2>Hi, I'm Dinur Islam</h2>
         <h3>n8n automation specialist</h3>
-        <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.
-
-</p>
+        <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.</p>
         <div class="avatar-frame"></div>
-        <div class="buttons">
-            <a href="#projects">My Projects</a>
-        </div>
     </div>
 
     <div class="section" id="projects">
