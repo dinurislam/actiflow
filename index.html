@@ -54,21 +54,10 @@
     .header {
       text-align: center;
       padding: 50px 0;
-      background: linear-gradient(to bottom, #2a002a, #1a001a);
+      background: url('https://i.ibb.co/ksVWRYMW/IMG-20250623-115446.jpg') no-repeat center;
+      background-size: cover;
       position: relative;
       overflow: hidden;
-    }
-    .header::before {
-      content: '';
-      position: absolute;
-      top: -50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #a100a1 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 0;
     }
     .header h1 {
       margin: 0;
@@ -106,17 +95,6 @@
       z-index: 1;
       opacity: 0;
       animation: fadeIn 1s ease-out 1.1s forwards;
-    }
-    .avatar-frame {
-      width: 250px;
-      height: 250px;
-      background: url('https://i.ibb.co/ksVWRYMW/IMG-20250623-115446.jpg') no-repeat center;
-      background-size: cover;
-      border-radius: 50%;
-      margin: 20px auto;
-      border: 5px solid #a100a1;
-      position: relative;
-      z-index: 1;
     }
     .section {
       padding: 50px 20px;
@@ -254,10 +232,6 @@
       .header {
         padding: 30px 0;
       }
-      .avatar-frame {
-        width: 150px;
-        height: 150px;
-      }
       .contact-links {
         flex-direction: column;
         align-items: center;
@@ -282,7 +256,6 @@
     <h2>Hi, I'm Dinur Islam</h2>
     <h3>n8n automation specialist</h3>
     <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.</p>
-    <div class="avatar-frame"></div>
   </div>
 
   <div class="section" id="projects">
