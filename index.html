@@ -134,9 +134,7 @@
     .section#about.in-view .skills,
     .section#services.in-view .services,
     .services.in-view,
-    .projects.in-view,
-    .service-card.in-view,
-    .project-card.in-view {
+    .service-card.in-view {
       opacity: 1;
       transform: translateY(0);
     }
@@ -153,14 +151,14 @@
       width: 40px;
       margin: 0 10px;
     }
-    .services, .projects {
+    .services {
       display: flex;
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
-    .service-card, .project-card {
+    .service-card {
       background: #2a002a;
       padding: 20px;
       width: 200px;
@@ -170,26 +168,8 @@
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
-    .service-card img, .project-card img {
+    .service-card img {
       width: 50px;
-    }
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .project-card a {
-      display: block;
-      padding: 10px 20px;
-      background: #a100a1;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      text-align: center;
-      margin-top: 10px;
-      transition: background 0.3s ease;
-    }
-    .project-card a:hover {
-      background: #d100d1;
     }
     .footer {
       text-align: center;
@@ -236,13 +216,13 @@
       to { opacity: 1; transform: scale(1); }
     }
     @media (max-width: 768px) {
-      .services, .projects {
+      .services {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding: 10px 0;
         -webkit-overflow-scrolling: touch;
       }
-      .service-card, .project-card {
+      .service-card {
         width: 180px;
         margin: 0 10px;
       }
@@ -274,7 +254,6 @@
       <a href="#" onclick="location.reload(); return false;">Home</a>
       <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
       <a href="#services" onclick="scrollToSection('services'); return false;">Services</a>
-      <a href="#projects" onclick="scrollToSection('projects'); return false;">My Projects</a>
       <a href="#contact" class="contact-btn" onclick="scrollToSection('contact'); return false;">Contact</a>
     </div>
   </div>
@@ -285,31 +264,6 @@
     <h3>n8n automation specialist</h3>
     <p>As an N8n automation specialist, I streamline complex workflows by connecting apps and automating repetitive tasks. I design efficient, no-code solutions that boost productivity and ensure smooth data flow across systems.</p>
     <div class="avatar-frame"></div>
-  </div>
-
-  <div class="section" id="projects">
-    <h2>My Projects</h2>
-    <p>Explore my projects that reflect my passion for intuitive design and smart automation</p>
-    <div class="projects">
-      <div class="project-card">
-        <img src="https://i.ibb.co/1tBSmbD7/IMG-20250624-WA0002.jpg" />
-        <h4>Amaskara App</h4>
-        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
-        <a href="https://example.com/amaskara" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="Homy App" />
-        <h4>Homy App</h4>
-        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
-        <a href="https://example.com/homy" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <img src="https://via.placeholder.com/200" alt="B-Roll Media" />
-        <h4>B-Roll Media</h4>
-        <p>Designing intuitive and engaging websites with a creative approach.</p>
-        <a href="https://example.com/broll" target="_blank">View Project</a>
-      </div>
-    </div>
   </div>
 
   <div class="section" id="services">
@@ -392,7 +346,7 @@
         });
       }, { threshold: 0.1 });
 
-      document.querySelectorAll('.section, .services, .projects, .service-card, .project-card, .about-content, .skills').forEach(element => {
+      document.querySelectorAll('.section, .services, .service-card, .about-content, .skills').forEach(element => {
         observer.observe(element);
       });
     });
