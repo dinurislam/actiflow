@@ -147,12 +147,24 @@
       margin: 0 auto;
       line-height: 1.6;
     }
+    .apps {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .app-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
     .skills {
-      display: block; /* flex থেকে block-এ পরিবর্তন, যাতে উল্লম্বভাবে আলাদা হয় */
-      text-align: center; /* শিরোনাম কেন্দ্রে */
+      display: block;
+      text-align: center;
     }
     .skills h2 {
-      margin-bottom: 20px; /* স্কিলগুলোর সাথে দূরত্ব */
+      margin-bottom: 20px;
     }
     .skills .skill-list {
       display: flex;
@@ -317,6 +329,19 @@
       <p>I create smart automations using N8n to save time and reduce manual work. My skills include designing simple workflows, connecting different apps, and automating tasks like collecting data, posting on social media, and sending notifications. I make sure everything runs smoothly and helps people work faster and easier.</p>
       <p>★ I am deeply committed to my work, putting creativity and accuracy into every automation to ensure smooth, effective, and time-saving solutions</p>
     </div>
+    <div class="section" id="apps">
+      <h2>Apps</h2>
+      <div class="apps">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Slack_logo.svg" alt="Slack" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Sheets" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Airtable_Logo_%282021%29.svg" alt="Airtable" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="app-icon" />
+      </div>
+    </div>
     <div class="skills">
       <h2>Skills</h2>
       <div class="skill-list">
@@ -364,7 +389,7 @@
         });
       }, { threshold: 0.1 });
 
-      document.querySelectorAll('.section, .services, .service-card, .about-content, .skills').forEach(element => {
+      document.querySelectorAll('.section, .services, .service-card, .about-content, .skills, .apps').forEach(element => {
         observer.observe(element);
       });
     });
