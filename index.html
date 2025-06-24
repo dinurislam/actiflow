@@ -153,14 +153,14 @@
       width: 40px;
       margin: 0 10px;
     }
-    .services {
+    .services, .projects {
       display: flex;
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
-    .service-card {
+    .service-card, .project-card {
       background: #2a002a;
       padding: 20px;
       width: 200px;
@@ -170,57 +170,26 @@
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
-    .service-card img {
+    .service-card img, .project-card img {
       width: 50px;
     }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    .project-card {
-      background: #2a002a;
-      padding: 0;
-      border-radius: 10px;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    .project-card video {
+    .project-card img {
       width: 100%;
-      height: 100%; /* Ensure video fills the card height */
-      object-fit: cover; /* Maintain aspect ratio and cover the area */
-      border-radius: 10px 10px 0 0; /* Round only top corners */
+      border-radius: 10px;
     }
-    .project-card .text-container {
-      padding: 10px;
-      background: #2a002a; /* Matching card background for consistency */
-      text-align: center;
-      border-radius: 0 0 10px 10px; /* Round bottom corners */
-    }
-    .project-card h4 {
-      margin: 0;
-      font-size: 18px;
+    .project-card a {
+      display: block;
+      padding: 10px 20px;
+      background: #a100a1;
       color: #fff;
-      white-space: nowrap; /* Prevent text wrapping */
-      overflow: hidden; /* Hide overflow */
-      text-overflow: ellipsis; /* Add ellipsis if text overflows */
+      text-decoration: none;
+      border-radius: 25px;
+      text-align: center;
+      margin-top: 10px;
+      transition: background 0.3s ease;
     }
-    .project-card p.description {
-      margin: 5px 0 0;
-      font-size: 14px;
-      color: #ccc;
-      white-space: nowrap; /* Prevent text wrapping */
-      overflow: hidden; /* Hide overflow */
-      text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    .project-card a:hover {
+      background: #d100d1;
     }
     .footer {
       text-align: center;
@@ -267,21 +236,33 @@
       to { opacity: 1; transform: scale(1); }
     }
     @media (max-width: 768px) {
-      .services {
+      .services, .projects {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding: 10px 0;
         -webkit-overflow-scrolling: touch;
       }
-      .service-card {
+      .service-card, .project-card {
         width: 180px;
         margin: 0 10px;
       }
-      .projects {
-        grid-template-columns: repeat(2, 1fr);
+      .navbar {
+        padding: 10px 20px;
       }
-      .project-card:nth-child(n + 3) {
-        margin-top: 20px;
+      .navbar .nav-links {
+        gap: 10px;
+      }
+      .header {
+        padding: 30px 0;
+      }
+      .avatar-frame {
+        width: 200px;
+        height: 200px;
+        border: 6px solid #a100a1;
+      }
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -311,38 +292,22 @@
     <p>Explore my projects that reflect my passion for intuitive design and smart automation</p>
     <div class="projects">
       <div class="project-card">
-        <video autoplay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="text">
-          <p class="description">Facebook lead generation</p>
-        </div>
+        <img src="https://i.ibb.co/1tBSmbD7/IMG-20250624-WA0002.jpg" />
+        <h4>Amaskara App</h4>
+        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
+        <a href="https://example.com/amaskara" target="_blank">View Project</a>
       </div>
       <div class="project-card">
-        <video autoplay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="text">
-          <p class="description">Visually appealing designs for better interaction</p></div>
-      <div class="project-card">
-        <video autoplay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="text">
-          <p class="description">Engaging websites with creative approaches</p>
-        </div>
+        <img src="https://via.placeholder.com/200" alt="Homy App" />
+        <h4>Homy App</h4>
+        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
+        <a href="https://example.com/homy" target="_blank">View Project</a>
       </div>
       <div class="project-card">
-        <video autoplay loop muted>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="text">
-          <p class="description">Innovative automation and design solutions</p>
-        </div>
+        <img src="https://via.placeholder.com/200" alt="B-Roll Media" />
+        <h4>B-Roll Media</h4>
+        <p>Designing intuitive and engaging websites with a creative approach.</p>
+        <a href="https://example.com/broll" target="_blank">View Project</a>
       </div>
     </div>
   </div>
@@ -353,7 +318,7 @@
     <div class="services">
       <div class="service-card">
         <img src="https://via.placeholder.com/50" alt="UI/UX" />
-        <h4>automation</h4>
+        <h4>UI/UX</h4>
         <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
       </div>
       <div class="service-card">
