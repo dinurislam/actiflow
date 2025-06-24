@@ -153,6 +153,7 @@
     }
     .services {
       display: flex;
+      flex-direction: column; /* উল্লম্বভাবে সারিবদ্ধ করা হয়েছে */
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
@@ -219,18 +220,16 @@
     }
     @media (max-width: 768px) {
       .services {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 10px 0;
-        -webkit-overflow-scrolling: touch;
+        flex-direction: column; /* মোবাইলে ও উল্লম্বভাবে রাখা হয়েছে */
+        overflow-x: hidden; /* হরিজন্টাল স্ক্রল অক্ষম */
       }
       .service-card {
-        width: 300px; /* বড় আকারে দেখানোর জন্য বৃদ্ধি করা হয়েছে */
-        margin: 0 10px;
+        width: 300px; /* বড় আকার বজায় */
+        margin: 0 auto; /* কেন্দ্রে সারিবদ্ধ */
       }
       .service-card img {
-        width: 300px; /* ছবির আকার বৃদ্ধি */
-        height: 225px; /* উচ্চতা সমানুপাতিকভাবে বৃদ্ধি */
+        width: 300px;
+        height: 225px;
       }
       .navbar {
         padding: 10px 20px;
