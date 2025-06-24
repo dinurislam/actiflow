@@ -159,6 +159,23 @@
       height: 40px;
       object-fit: contain;
     }
+    .upload-input {
+      display: none;
+    }
+    .upload-label {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 2px dashed #a100a1;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      color: #a100a1;
+    }
+    .upload-label:hover {
+      background: #2a002a;
+    }
     .skills {
       display: block;
       text-align: center;
@@ -332,9 +349,12 @@
     <div class="section" id="apps">
       <h2>Apps</h2>
       <div class="apps">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Slack_logo.svg/512px-Slack_logo.svg.png" alt="Slack" class="app-icon" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Airtable_Logo_%282021%29.svg" alt="Airtable" class="app-icon" />
-        <img src="https://www.google.com/sheets/about/static/images/sheets-icon.png" alt="Google Sheets" class="app-icon" />
+        <label for="slack-upload" class="upload-label">Upload Slack</label>
+        <input type="file" id="slack-upload" class="upload-input" accept="image/*">
+        <label for="airtable-upload" class="upload-label">Upload Airtable</label>
+        <input type="file" id="airtable-upload" class="upload-input" accept="image/*">
+        <label for="google-sheets-upload" class="upload-label">Upload Google Sheets</label>
+        <input type="file" id="google-sheets-upload" class="upload-input" accept="image/*">
         <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="app-icon" />
@@ -391,6 +411,25 @@
 
       document.querySelectorAll('.section, .services, .service-card, .about-content, .skills, .apps').forEach(element => {
         observer.observe(element);
+      });
+
+      // File input change handler
+      const inputs = document.querySelectorAll('.upload-input');
+      inputs.forEach(input => {
+        input.addEventListener('change', function(e) {
+          const file = e.target.files[0];
+          const label = input.previousElementSibling;
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              label.style.backgroundImage = `url(${e.target.result})`;
+              label.style.backgroundSize = 'cover';
+              label.style.border = 'none';
+              label.textContent = '';
+            };
+            reader.readAsDataURL(file);
+          }
+        });
       });
     });
 
