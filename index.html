@@ -183,41 +183,37 @@
     }
     .project-card {
       background: #2a002a;
-      padding: 0; /* Removed padding to maximize video space */
+      padding: 0;
       border-radius: 10px;
       position: relative;
       overflow: hidden;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .project-card video {
       width: 100%;
       height: 100%; /* Ensure video fills the card height */
       object-fit: cover; /* Maintain aspect ratio and cover the area */
-      border-radius: 10px;
+      border-radius: 10px 10px 0 0; /* Round only top corners */
+    }
+    .project-card .text-container {
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+      text-align: center;
     }
     .project-card h4 {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
       margin: 0;
       font-size: 18px;
       color: #fff;
-      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-      padding: 5px 10px;
-      border-radius: 5px;
     }
     .project-card p.description {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      margin: 0;
-      font-size: 12px;
+      margin: 5px 0 0;
+      font-size: 14px;
       color: #ccc;
-      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-      padding: 5px 10px;
-      border-radius: 5px;
     }
     .footer {
       text-align: center;
@@ -312,32 +308,40 @@
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h4>Amaskara App</h4>
-        <p class="description">Intuitive designs enhancing user experience.</p>
+        <div class="text-container">
+          <h4>Amaskara App</h4>
+          <p class="description">Intuitive designs enhancing user experience.</p>
+        </div>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h4>Homy App</h4>
-        <p class="description">Visually appealing designs for better user interaction.</p>
+        <div class="text-container">
+          <h4>Homy App</h4>
+          <p class="description">Visually appealing designs for better user interaction.</p>
+        </div>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h4>B-Roll Media</h4>
-        <p class="description">Engaging websites with creative approaches.</p>
+        <div class="text-container">
+          <h4>B-Roll Media</h4>
+          <p class="description">Engaging websites with creative approaches.</p>
+        </div>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-        <h4>New Project</h4>
-        <p class="description">Innovative automation and design solutions.</p>
+        <div class="text-container">
+          <h4>New Project</h4>
+          <p class="description">Innovative automation and design solutions.</p>
+        </div>
       </div>
     </div>
   </div>
