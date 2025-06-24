@@ -172,9 +172,23 @@
       text-align: center;
       line-height: 40px;
       color: #a100a1;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .upload-label.active {
+      opacity: 1;
+      pointer-events: auto;
     }
     .upload-label:hover {
       background: #2a002a;
+    }
+    .password-input {
+      margin: 10px 0;
+      padding: 5px;
+      background: #2a002a;
+      border: 1px solid #a100a1;
+      color: #fff;
+      border-radius: 5px;
     }
     .skills {
       display: block;
@@ -348,6 +362,7 @@
     </div>
     <div class="section" id="apps">
       <h2>Apps</h2>
+      <input type="password" id="auth-password" class="password-input" placeholder="Enter Password" onkeyup="checkPassword()">
       <div class="apps">
         <label for="slack-upload" class="upload-label">Upload Slack</label>
         <input type="file" id="slack-upload" class="upload-input" accept="image/*">
@@ -412,6 +427,19 @@
       document.querySelectorAll('.section, .services, .service-card, .about-content, .skills, .apps').forEach(element => {
         observer.observe(element);
       });
+
+      // Password authentication
+      function checkPassword() {
+        const passwordInput = document.getElementById('auth-password');
+        const uploadLabels = document.querySelectorAll('.upload-label');
+        const correctPassword = 'mysecret'; // Change this to your desired password
+
+        if (passwordInput.value === correctPassword) {
+          uploadLabels.forEach(label => label.classList.add('active'));
+        } else {
+          uploadLabels.forEach(label => label.classList.remove('active'));
+        }
+      }
 
       // File input change handler
       const inputs = document.querySelectorAll('.upload-input');
