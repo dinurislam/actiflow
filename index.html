@@ -154,7 +154,8 @@
       margin: 0 10px;
     }
     .services, .projects {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
@@ -163,7 +164,7 @@
     .service-card, .project-card {
       background: #2a002a;
       padding: 20px;
-      width: 200px;
+      width: 100%;
       border-radius: 10px;
       flex-shrink: 0;
       opacity: 0;
@@ -174,19 +175,10 @@
       width: 100%;
       border-radius: 10px;
     }
-    .project-card a {
-      display: block;
-      padding: 10px 20px;
-      background: #a100a1;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      text-align: center;
+    .project-card p.description {
+      font-size: 14px;
+      color: #ccc;
       margin-top: 10px;
-      transition: background 0.3s ease;
-    }
-    .project-card a:hover {
-      background: #d100d1;
     }
     .footer {
       text-align: center;
@@ -234,14 +226,11 @@
     }
     @media (max-width: 768px) {
       .services, .projects {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 10px 0;
-        -webkit-overflow-scrolling: touch;
+        grid-template-columns: 1fr;
       }
       .service-card, .project-card {
-        width: 180px;
-        margin: 0 10px;
+        width: 100%;
+        margin: 0;
       }
       .navbar {
         padding: 10px 20px;
@@ -294,8 +283,7 @@
           Your browser does not support the video tag.
         </video>
         <h4>Amaskara App</h4>
-        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
-        <a href="https://example.com/amaskara" target="_blank">View Project</a>
+        <p class="description">Intuitive designs enhancing user experience.</p>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
@@ -303,8 +291,7 @@
           Your browser does not support the video tag.
         </video>
         <h4>Homy App</h4>
-        <p>Creating intuitive and visually appealing designs that enhance user experience.</p>
-        <a href="https://example.com/homy" target="_blank">View Project</a>
+        <p class="description">Visually appealing designs for better user interaction.</p>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
@@ -312,8 +299,7 @@
           Your browser does not support the video tag.
         </video>
         <h4>B-Roll Media</h4>
-        <p>Designing intuitive and engaging websites with a creative approach.</p>
-        <a href="https://example.com/broll" target="_blank">View Project</a>
+        <p class="description">Engaging websites with creative approaches.</p>
       </div>
       <div class="project-card">
         <video autoplay loop muted>
@@ -321,8 +307,7 @@
           Your browser does not support the video tag.
         </video>
         <h4>New Project</h4>
-        <p>Exploring innovative automation and design solutions.</p>
-        <a href="https://example.com/newproject" target="_blank">View Project</a>
+        <p class="description">Innovative automation and design solutions.</p>
       </div>
     </div>
   </div>
