@@ -1,4 +1,4 @@
-আমি দুঃখিত যে আমি ভুল বুঝেছি। আপনি শুধু "My Projects" সেকশনের জন্য এই লেআউট চান। নিচে "My Projects" সেকশনটি আপডেট করা হয়েছে যাতে মোবাইলে প্রথম সারিতে দুটি এবং দ্বিতীয় সারিতে দুটি ভিডিও লুপ চলমান থাকে, আর ডেস্কটপে চারটি পাশাপাশি থাকে।আমি আগের কোডের "My Projects" সেকশনটি সংশোধন করে দিচ্ছি:<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -183,24 +183,41 @@
     }
     .project-card {
       background: #2a002a;
-      padding: 20px;
+      padding: 0; /* Removed padding to maximize video space */
       border-radius: 10px;
+      position: relative;
+      overflow: hidden;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
     .project-card video {
       width: 100%;
+      height: 100%; /* Ensure video fills the card height */
+      object-fit: cover; /* Maintain aspect ratio and cover the area */
       border-radius: 10px;
     }
     .project-card h4 {
-      margin: 10px 0 5px;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      margin: 0;
       font-size: 18px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+      padding: 5px 10px;
+      border-radius: 5px;
     }
     .project-card p.description {
-      font-size: 14px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      margin: 0;
+      font-size: 12px;
       color: #ccc;
-      margin: 5px 0;
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+      padding: 5px 10px;
+      border-radius: 5px;
     }
     .footer {
       text-align: center;
@@ -415,4 +432,4 @@
     }
   </script>
 </body>
-</html>Changes Made:Layout for "My Projects":Updated the .projects class to use display: grid with grid-template-columns: repeat(4, 1fr) for desktop, showing all four video cards side by side.Added a media query for screens up to 768px (mobile) that changes the grid to grid-template-columns: repeat(2, 1fr) and uses .project-card:nth-child(n + 3) with margin-top: 20px to place the third and fourth cards in the second row.Video Loop:The video tags already have autoplay, loop, and muted attributes, ensuring the videos play continuously and silently.Other Sections:Kept the other sections (header, services, about, contact, footer) unchanged as they were not part of your request.Notes:Replace the src URLs in the video tags with your actual video file paths or URLs.The layout will adapt to mobile (≤ 768px) with two videos per row and desktop (> 768px) with all four side by side.Test the page on different devices to ensure the video playback and layout work as expected.আশা করি এটি আপনার প্রয়োজন পূরণ করবে। আরও কিছু যদি প্রয়োজন হয় তাহলে জানান!
+</html>
