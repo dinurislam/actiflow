@@ -147,13 +147,26 @@
       margin: 0 auto;
       line-height: 1.6;
     }
-    .skills img {
-      width: 40px;
-      margin: 0 10px;
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .skill-pill {
+      background: #2a002a;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+    .skill-pill:hover {
+      background: #d100d1;
     }
     .services {
       display: flex;
-      flex-direction: column; /* উল্লম্বভাবে সারিবদ্ধ করা হয়েছে */
+      flex-direction: column;
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
@@ -167,7 +180,7 @@
       flex-shrink: 0;
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     }
     .service-card img {
       width: 200px;
@@ -220,12 +233,12 @@
     }
     @media (max-width: 768px) {
       .services {
-        flex-direction: column; /* মোবাইলে ও উল্লম্বভাবে রাখা হয়েছে */
-        overflow-x: hidden; /* হরিজন্টাল স্ক্রল অক্ষম */
+        flex-direction: column;
+        overflow-x: hidden;
       }
       .service-card {
-        width: 300px; /* বড় আকার বজায় */
-        margin: 0 auto; /* কেন্দ্রে সারিবদ্ধ */
+        width: 300px;
+        margin: 0 auto;
       }
       .service-card img {
         width: 300px;
@@ -299,11 +312,10 @@
     </div>
     <div class="skills">
       <h3>Skills</h3>
-      <img src="https://via.placeholder.com/40" alt="Xd" />
-      <img src="https://via.placeholder.com/40" alt="Ai" />
-      <img src="https://via.placeholder.com/40" alt="Ps" />
-      <img src="https://via.placeholder.com/40" alt="Figma" />
-      <img src="https://via.placeholder.com/40" alt="Sketch" />
+      <span class="skill-pill">n8n</span>
+      <span class="skill-pill">ai agent</span>
+      <span class="skill-pill">slack agent</span>
+      <span class="skill-pill">lead generation</span>
     </div>
   </div>
 
