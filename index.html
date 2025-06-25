@@ -185,18 +185,18 @@
     }
     .services {
       display: flex;
-      justify-content: center; /* Center the cards horizontally */
+      justify-content: center;
       gap: 20px;
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      flex-wrap: wrap;
     }
     .service-card {
       background: #2a002a;
       padding: 20px;
-      width: 300px; /* Increased width */
-      height: 250px; /* Increased height */
+      width: 300px;
+      height: 250px;
       border-radius: 10px;
       flex-shrink: 0;
       opacity: 0;
@@ -205,10 +205,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      cursor: pointer; /* Make the card clickable */
     }
     .service-card img {
-      width: 280px; /* Adjusted to fit within card */
-      height: 200px; /* Adjusted to fit within card */
+      width: 280px;
+      height: 200px;
       object-fit: cover;
       border-radius: 5px;
     }
@@ -243,6 +244,33 @@
     .contact-links img {
       width: 30px;
       margin-right: 10px;
+    }
+    /* Modal styles for enlarged image */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
@@ -327,10 +355,10 @@
       <div class="service-card">
         <img src="https://i.ibb.co/v4jG43zn/IMG-20250616-WA0005.jpg" alt="Service 4" />
       </div>
-            <div class="service-card">
+      <div class="service-card">
         <img src="https://i.ibb.co/zTFyBk6d/IMG-20250603-WA0005-1.jpg" alt="Service 5" />
       </div>
-            <div class="service-card">
+      <div class="service-card">
         <img src="https://i.ibb.co/KpqWrCxf/IMG-20250624-WA0010.jpg" alt="Service 6" />
       </div>
     </div>
@@ -344,7 +372,7 @@
       <p>★ I am deeply committed to my work, putting creativity and accuracy into every automation to ensure smooth, effective, and time-saving solutions</p>
     </div>
     <div class="section" id="apps">
-      <h2>Apps</h2>
+      <h2>Node apps</h2>
       <div class="apps">
         <img src="https://i.ibb.co/2YfRX4y6/IMG-20250625-WA0012.jpg" alt="Slack" class="app-icon" />
         <img src="https://i.ibb.co/4R30mMd4/IMG-20250625-WA0013.jpg" alt="Slack" class="app-icon" />
@@ -356,6 +384,8 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Whatsapp" class="app-icon" />
+        <img src="https://i.ibb.co/DgM6cSPS/IMG-20250625-WA0014.jpg" alt="Telegram" class="app-icon" />
       </div>
     </div>
     <div class="skills">
@@ -396,6 +426,12 @@
     <a href="#appreciate">I Appreciate</a>
   </div>
 
+  <!-- Modal for enlarged image -->
+  <div class="modal" id="imageModal">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Enlarged Image" />
+  </div>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries, observer) => {
@@ -410,11 +446,33 @@
       document.querySelectorAll('.section, .services, .service-card, .about-content, .skills, .apps').forEach(element => {
         observer.observe(element);
       });
+
+      // Add click event listeners to service images
+      document.querySelectorAll('.service-card img').forEach(img => {
+        img.addEventListener('click', () => {
+          const modal = document.getElementById('imageModal');
+          const modalImage = document.getElementById('modalImage');
+          modalImage.src = img.src;
+          modal.style.display = 'flex';
+        });
+      });
     });
 
     function scrollToSection(sectionId) {
       document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside the image
+    document.getElementById('imageModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('imageModal')) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
