@@ -27,7 +27,7 @@
     .navbar .logo {
       width: 30px;
       height: 30px;
-      background: #ff0000; /* Changed to red */
+      background: #a100a1;
       border-radius: 50%;
     }
     .navbar .nav-links {
@@ -41,7 +41,7 @@
       cursor: pointer;
     }
     .navbar .contact-btn {
-      background: #ff0000; /* Changed to red */
+      background: #a100a1;
       padding: 10px 30px;
       border-radius: 25px;
       text-decoration: none;
@@ -49,12 +49,12 @@
       transition: background 0.3s ease;
     }
     .navbar .contact-btn:hover {
-      background: #cc0000; /* Darker red for hover */
+      background: #d100d1;
     }
     .header {
       text-align: center;
       padding: 50px 0;
-      background: linear-gradient(to bottom, #3a0000, #1a001a); /* Changed to red gradient */
+      background: linear-gradient(to bottom, #2a002a, #1a001a);
       position: relative;
       overflow: hidden;
     }
@@ -66,14 +66,14 @@
       transform: translateX(-50%);
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, #ff0000 0%, transparent 70%); /* Changed to red */
+      background: radial-gradient(circle, #a100a1 0%, transparent 70%);
       border-radius: 50%;
       z-index: 0;
     }
     .header h1 {
       margin: 0;
       font-size: 40px;
-      color: #ff0000; /* Changed to red */
+      color: #d100d1;
       position: relative;
       z-index: 1;
       opacity: 0;
@@ -91,7 +91,7 @@
     .header h3 {
       margin: 5px 0;
       font-size: 25px;
-      color: #ff0000; /* Changed to red */
+      color: #d100d1;
       position: relative;
       z-index: 1;
       opacity: 0;
@@ -114,7 +114,7 @@
       background-size: cover;
       border-radius: 50%;
       margin: 20px auto;
-      border: 8px solid #ff0000; /* Changed to red */
+      border: 8px solid #a100a1;
       background-color: transparent;
       position: relative;
       z-index: 1;
@@ -139,7 +139,7 @@
       transform: translateY(0);
     }
     .section h2 {
-      color: #ff0000; /* Changed to red */
+      color: #d100d1;
       font-size: 30px;
     }
     .about-content {
@@ -181,7 +181,7 @@
       transition: background 0.3s ease;
     }
     .skill-pill:hover {
-      background: #ff0000; /* Changed to red */
+      background: #d100d1;
     }
     .services {
       display: flex;
@@ -205,7 +205,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: pointer;
+      cursor: pointer; /* Make the card clickable */
     }
     .service-card img {
       width: 280px;
@@ -221,7 +221,7 @@
       animation: fadeIn 1s ease-out 0.5s forwards;
     }
     .footer a {
-      color: #ff0000; /* Changed to red */
+      color: #a100a1;
       margin: 0 10px;
       text-decoration: none;
     }
@@ -239,12 +239,13 @@
       transition: color 0.3s ease;
     }
     .contact-links a:hover {
-      color: #ff0000; /* Changed to red */
+      color: #d100d1;
     }
     .contact-links img {
       width: 30px;
       margin-right: 10px;
     }
+    /* Modal styles for enlarged image */
     .modal {
       display: none;
       position: fixed;
@@ -310,7 +311,7 @@
       .avatar-frame {
         width: 200px;
         height: 200px;
-        border: 6px solid #ff0000; /* Changed to red */
+        border: 6px solid #a100a1;
       }
       .contact-links {
         flex-direction: column;
@@ -425,8 +426,9 @@
     <a href="#appreciate">I Appreciate</a>
   </div>
 
+  <!-- Modal for enlarged image -->
   <div class="modal" id="imageModal">
-    <span class="modal-close" onclick="closeModal()">×</span>
+    <span class="modal-close" onclick="closeModal()">&times;</span>
     <img id="modalImage" src="" alt="Enlarged Image" />
   </div>
 
@@ -445,6 +447,7 @@
         observer.observe(element);
       });
 
+      // Add click event listeners to service images
       document.querySelectorAll('.service-card img').forEach(img => {
         img.addEventListener('click', () => {
           const modal = document.getElementById('imageModal');
@@ -459,10 +462,12 @@
       document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Function to close the modal
     function closeModal() {
       document.getElementById('imageModal').style.display = 'none';
     }
 
+    // Close modal when clicking outside the image
     document.getElementById('imageModal').addEventListener('click', (e) => {
       if (e.target === document.getElementById('imageModal')) {
         closeModal();
