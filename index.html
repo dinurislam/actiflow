@@ -25,10 +25,11 @@
       animation: fadeIn 1s ease-in;
     }
     .navbar .logo {
-      width: 30px;
-      height: 30px;
+      width: 40px; /* Increased from 30px */
+      height: 40px; /* Increased from 30px */
       border-radius: 50%;
-      object-fit: cover; /* Ensures the image fits well within the circular frame */
+      object-fit: cover;
+      border: 2px solid #a100a1; /* Optional: matches avatar-frame style */
     }
     .navbar .nav-links {
       display: flex;
@@ -196,7 +197,7 @@
       background: #2a002a;
       padding: 20px;
       width: 300px;
-      height: 250x;
+      height: 250px; /* Fixed typo from 250x */
       border-radius: 10px;
       flex-shrink: 0;
       opacity: 0;
@@ -205,7 +206,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: pointer; /* Make the card clickable */
+      cursor: pointer;
     }
     .service-card img {
       width: 280px;
@@ -322,7 +323,7 @@
 </head>
 <body>
   <div class="navbar">
-    <img src="https://i.ibb.co/GvmSbXJ5/IMG-20250625-WA0012.jpg" alt="Profile Image" class="logo">
+    <img src="https://i.ibb.co/1tBSmbD7/IMG-20250624-WA0002.jpg" alt="Profile Image" class="logo">
     <div class="nav-links">
       <a href="#" onclick="location.reload(); return false;">Home</a>
       <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
@@ -405,7 +406,7 @@
     <h2>Contact</h2>
     <p>Get in touch with me through the following channels:</p>
     <div class="contact-links">
-      <a href="https://wa.me/01336441205" target="_blank">
+      <a href="https://wa.me/ Atualizar 01336441205" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
         WhatsApp: 01336441205
       </a>
