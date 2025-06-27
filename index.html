@@ -28,7 +28,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      object-fit: cover; /* Ensures the image fits well within the circular frame */
+      object-fit: cover;
     }
     .navbar .nav-links {
       display: flex;
@@ -196,7 +196,7 @@
       background: #2a002a;
       padding: 20px;
       width: 300px;
-      height: 250x;
+      height: 250px;
       border-radius: 10px;
       flex-shrink: 0;
       opacity: 0;
@@ -205,7 +205,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: pointer; /* Make the card clickable */
+      cursor: pointer;
     }
     .service-card img {
       width: 280px;
@@ -245,7 +245,15 @@
       width: 30px;
       margin-right: 10px;
     }
-    /* Modal styles for enlarged image */
+    .contact-links a.whatsapp-link {
+      background: #25D366;
+      padding: 8px 15px;
+      border-radius: 20px;
+      color: #fff;
+    }
+    .contact-links a.whatsapp-link:hover {
+      background: #1ebe57;
+    }
     .modal {
       display: none;
       position: fixed;
@@ -384,7 +392,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" class="app-icon" />
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="app-icon" />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Whatsapp" class="app-icon" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="app-icon" />
         <img src="https://i.ibb.co/DgM6cSPS/IMG-20250625-WA0014.jpg" alt="Telegram" class="app-icon" />
       </div>
     </div>
@@ -392,11 +400,11 @@
       <h2>Skills</h2>
       <div class="skill-list">
         <span class="skill-pill">n8n</span>
-        <span class="skill-pill">ai agent</span>
-        <span class="skill-pill">slack agent</span>
-        <span class="skill-pill">lead generation</span>
-        <span class="skill-pill">api intigration</span>
-        <span class="skill-pill">web scraping</span>
+        <span class="skill-pill">AI Agent</span>
+        <span class="skill-pill">Slack Agent</span>
+        <span class="skill-pill">Lead Generation</span>
+        <span class="skill-pill">API Integration</span>
+        <span class="skill-pill">Web Scraping</span>
       </div>
     </div>
   </div>
@@ -405,9 +413,9 @@
     <h2>Contact</h2>
     <p>Get in touch with me through the following channels:</p>
     <div class="contact-links">
-      <a href="https://wa.me/01336441205" target="_blank">
+      <a href="https://wa.me/+8801336441205?text=Hello%20Dinur,%20I%20am%20interested%20in%20your%20n8n%20automation%20services!" target="_blank" class="whatsapp-link">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-        WhatsApp: 01336441205
+        WhatsApp: +8801336441205
       </a>
       <a href="https://www.facebook.com/share/16noooY6Rt/" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
@@ -426,7 +434,6 @@
     <a href="#appreciate">I Appreciate</a>
   </div>
 
-  <!-- Modal for enlarged image -->
   <div class="modal" id="imageModal">
     <span class="modal-close" onclick="closeModal()">×</span>
     <img id="modalImage" src="" alt="Enlarged Image" />
@@ -447,7 +454,6 @@
         observer.observe(element);
       });
 
-      // Add click event listeners to service images
       document.querySelectorAll('.service-card img').forEach(img => {
         img.addEventListener('click', () => {
           const modal = document.getElementById('imageModal');
@@ -462,12 +468,10 @@
       document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Function to close the modal
     function closeModal() {
       document.getElementById('imageModal').style.display = 'none';
     }
 
-    // Close modal when clicking outside the image
     document.getElementById('imageModal').addEventListener('click', (e) => {
       if (e.target === document.getElementById('imageModal')) {
         closeModal();
