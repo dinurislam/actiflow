@@ -27,8 +27,8 @@
     .navbar .logo {
       width: 30px;
       height: 30px;
-      background: #a100a1;
       border-radius: 50%;
+      object-fit: cover; /* Ensures the image fits well within the circular frame */
     }
     .navbar .nav-links {
       display: flex;
@@ -196,7 +196,7 @@
       background: #2a002a;
       padding: 20px;
       width: 300px;
-      height: 250px;
+      height: 250x;
       border-radius: 10px;
       flex-shrink: 0;
       opacity: 0;
@@ -322,7 +322,7 @@
 </head>
 <body>
   <div class="navbar">
-    <div class="logo"></div>
+    <img src="https://i,ibb.co/1tBSmbD7/IMG-20250624-WA0002.jpg" alt="Profile Image" class="logo">
     <div class="nav-links">
       <a href="#" onclick="location.reload(); return false;">Home</a>
       <a href="#about" onclick="scrollToSection('about'); return false;">About Me</a>
@@ -428,7 +428,7 @@
 
   <!-- Modal for enlarged image -->
   <div class="modal" id="imageModal">
-    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <span class="modal-close" onclick="closeModal()">×</span>
     <img id="modalImage" src="" alt="Enlarged Image" />
   </div>
 
